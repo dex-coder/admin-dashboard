@@ -6,4 +6,6 @@ export { default as Table } from './table/Table';
 
 export { default as Badge } from './badge/Badge';
 
+export { default as ThemeMenu } from './themeMenu/ThemeMenu';
+
 

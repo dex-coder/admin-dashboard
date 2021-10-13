@@ -160,8 +160,8 @@ const Dashboard = () => {
     <div>
       <h2 className="page__header">Dashboard</h2>
       <div className="dashboard__container">
-        <Grid container>
-          <Grid item xs={5} sm={5} md={5} lg={5} xl={5}>
+        <Grid container spacing={1}>
+         <Grid item xs={5} sm={5} md={5} lg={5} xl={5}>
             {/* status cards */}
             <Grid xs container spacing={1}>
               {statusCards.map((item, index) => (
@@ -187,8 +187,10 @@ const Dashboard = () => {
               />
             </div>
           </Grid>
-          <Grid container xs>
-            <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
+         </Grid>
+
+            <Grid container spacing={2} style={{marginTop: "2px"}}>
+            <Grid item xs={4} sm={4} md={4} lg={4} xl={4} >
               <div className="card">
                 <div className="card__header">
                   <h3>top customers</h3>
@@ -234,8 +236,7 @@ const Dashboard = () => {
               </div>
             </Grid>
 
-          </Grid>
-        </Grid>
+         </Grid>
       </div>
     </div>
   );

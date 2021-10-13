@@ -1,18 +1,12 @@
 import React from 'react'
-
 import './topnav.css'
-
 import { Link } from 'react-router-dom'
-
-
 import notifications from '../../assets/JsonData/notification.json'
-
 import user_image from '../../assets/images/tuat.png'
-
 import user_menu from '../../assets/JsonData/user_menus.json'
 import SearchIcon from "@mui/icons-material/Search";
 import "./topnav.css";
-import { Dropdown }  from "../index";
+import { Dropdown, ThemeMenu }  from "../index";
 
 const curr_user = {
     display_name: 'Dex coder',
@@ -72,9 +66,9 @@ const Topnav = () => {
                     />
                     {/* dropdown here */}
                 </div>
-                {/* <div className="topnav__right-item">
+                <div className="topnav__right-item">
                     <ThemeMenu/>
-                </div> */}
+                </div> 
             </div>
         </div>
     )
