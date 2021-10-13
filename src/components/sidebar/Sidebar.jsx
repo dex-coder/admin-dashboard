@@ -26,7 +26,7 @@ const Sidebar = () => {
             </div>
             {
                 sidebar__items.map((item, index) => (
-                    <NavLink to={item.route} onClick={() => setValue(index)}>
+                    <NavLink to={item.route} key={index} onClick={() => setValue(index)}>
                         <div className={`sidebar__item-inner ${index === value && 'active'}`} >
                         <div className="sidebar__item">
                         <i className={item.icon}></i>

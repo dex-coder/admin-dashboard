@@ -4,6 +4,7 @@ import statusCards from "../assets/JsonData/status-card-data.json";
 import { StatusCard, Table, Badge } from "../components/index";
 import Chart from "react-apexcharts";
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux'
 
 const chartOptions = {
   series: [
@@ -156,14 +157,15 @@ const renderOrderBody = (item, index) => (
 );
 
 const Dashboard = () => {
+  const themeReducer = useSelector(state => state.ThemeReducer.mode)
   return (
     <div>
       <h2 className="page__header">Dashboard</h2>
       <div className="dashboard__container">
-        <Grid container spacing={1}>
+        <Grid container spacing={2}>
          <Grid item xs={5} sm={5} md={5} lg={5} xl={5}>
             {/* status cards */}
-            <Grid xs container spacing={1}>
+            <Grid container spacing={2}>
               {statusCards.map((item, index) => (
                 <Grid item xs={6} sm={6} md={6} lg={6} xl={6} key={index}>
                   <StatusCard
@@ -180,10 +182,16 @@ const Dashboard = () => {
           <Grid item xs={6} sm={6} md={7} lg={7} xl={7}>
             <div className="card full__height">
               <Chart
-                options={chartOptions.options}
-                series={chartOptions.series}
-                type="line"
-                height="100%"
+               options={themeReducer === 'theme-mode-dark' ? {
+                ...chartOptions.options,
+                theme: { mode: 'dark'}
+            } : {
+                ...chartOptions.options,
+                theme: { mode: 'light'}
+            }}
+            series={chartOptions.series}
+            type='line'
+            height='100%'
               />
             </div>
           </Grid>

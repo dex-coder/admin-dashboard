@@ -21,10 +21,12 @@
 
 .sidebar__item {
     padding: 0 15px;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar__item-inner {
-    padding: 15px 25px;
+    padding: 10px 25px;
     display: flex;
     align-items: center;
     font-weight: 600;
@@ -32,18 +34,16 @@
     margin: 0 1.4rem;
 }
 
-.sidebar__item-inner   i {
+.sidebar__item-inner i {
     margin-right: 10px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .sidebar__item-inner span {
     text-transform: capitalize;
+    font-size: 15px;
 }
 
-.sidebar__item-inner .display__name{
-    padding-bottom: 20px;
-}
 
 .sidebar__item-inner:hover {
     color: var(--main-color);
